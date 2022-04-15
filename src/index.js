@@ -12,17 +12,24 @@ document.addEventListener("DOMContentLoaded", () => {
       toyFormContainer.style.display = "none";
     }
    
-  })})
+  })
+  const newToyForm =document.querySelector('.add-toy-form')
+  newToyForm.addEventListener('submit',
+      (e) =>{ 
+        e.preventDefault()
+        let namedValue =e.target[0].value
+        let urlValue = e.target[1].value
 
+        let toyObject= {
+          name: namedValue, 
+          image: urlValue,
+          likes: 0
+        }
+        postNewToy(toyObject)
+      })
+    })
 
-  
-  //   let toyObject = {
-  //     name: e.target.name.value,
-  //     image:e.target.image_url.value,
-      
-  //   }
-  // }
-  getAllToys()
+    getAllToys()
 
   function getAllToys(){
     fetch('http://localhost:3000/toys')
@@ -44,26 +51,18 @@ document.addEventListener("DOMContentLoaded", () => {
     cardContainer.appendChild(card)
   }
 
-  postNewToy()
     
-  function postNewToy(newToyObj){
-    let submitButton =document.querySelector('input.submit')
+   function postNewToy(toyObject){
     
-    submitButton.addEventListener('click', (e)=>
-        e.preventDefault())
-   
-    let inputForm = document.getElementsByTagName('form')
-    console.log(inputForm)
-    fetch('http://localhost:3000/toys',{
-      method: 'POST',
-      headers:{
-          "Content-Type":"application/json",
-          Accept: "application/json"
-          },
-      body: JSON.stringify(newToyObj)
-       })
-      .then(res=>res.json())
-  // }
-  //     // .then(data)
-    
-  }  
+      fetch('http://localhost:3000/toys',{
+          method: 'POST',
+          headers:{
+              "Content-Type":"application/json",
+              Accept: "application/json"
+              },
+          body:JSON.stringify(toyObject)
+            })
+      .then(res =>res.json())
+      .then(toy=>console.log(toy))
+  }
+      
