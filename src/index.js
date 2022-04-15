@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
    
   })
   const newToyForm =document.querySelector('.add-toy-form')
-  const likeButton = document.querySelector('button')
-  likeButton.addEventListener('click', updateLikes(toyObject))
+
+ 
 
   newToyForm.addEventListener('submit',
       (e) =>{ 
@@ -28,9 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
           image: urlValue,
           likes: 0
         }
-        postNewToy(toyObject)
-      })
-    })
+  postNewToy(toyObject)
+      
+         })
+  
+  
 
   getAllToys()
 
@@ -52,6 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>`
     let cardContainer = document.getElementById('toy-collection')
     cardContainer.appendChild(card)
+    const likeButton = document.querySelector('button')
+    likeButton.addEventListener('click', updateLikes(toyCard))
   }
 
     
@@ -66,25 +70,24 @@ document.addEventListener("DOMContentLoaded", () => {
           body:JSON.stringify(toyObject)
             })
       .then(res =>res.json())
-      .then(toy=>console.log(toy))
+      .then(toy=>renderOneToyCard(toy))
+      
   }
 
 
-  function updateLikes(toyObject){
-    console.log(toyObject)
-    
-   
-  //       fetch('http://localhost:3000/toys/${id}',
-  //       {
-  //         method: 'PATCH',
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //           Accept: "application/json"
-  //         },
-  //         body: JSON.stringify({
-  //           likes: toyObject.likes + 1
-  //         })
-  //     })
-  //   )
-  // }
-  }
+  function updateLikes(toyCard){
+   let newLikesTotal = (toyCard.likes)++
+    fetch(`http://localhost:3000/toys/${toyCard.id}`,
+        {
+          method: 'PATCH',
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify({
+            likes: newLikesTotal
+          })
+      })
+    }
+  
+        })
