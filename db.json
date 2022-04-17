@@ -1,82 +1,52 @@
 {
   "toys": [
-    {
-      "id": 1,
-      "name": "Woody",
-      "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": "newLikesTotal"
-    },
-    {
-      "id": 2,
-      "name": "Buzz Lightyear",
-      "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": "newLikesTotal"
-    },
-    {
-      "id": 3,
-      "name": "Mr. Potato Head",
-      "image": "https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217",
-      "likes": "newLikesTotal"
-    },
-    {
-      "id": 4,
-      "name": "Slinky Dog",
-      "image": "https://www.freeiconspng.com/uploads/slinky-png-transparent-1.png",
-      "likes": "newLikesTotal"
-    },
-    {
-      "id": 5,
-      "name": "Rex",
-      "image": "http://umich.edu/~chemh215/W11HTML/SSG5/ssg5.2/FRex.png",
-      "likes": "newLikesTotal"
-    },
-    {
-      "id": 6,
-      "name": "Bo Peep",
-      "image": "http://4.bp.blogspot.com/_OZHbJ8c71OM/Sog43CMFX2I/AAAAAAAADEs/0AKX0XslD4g/s400/bo.png",
-      "likes": "newLikesTotal"
-    },
-    {
-      "id": 7,
-      "name": "Hamm",
-      "image": "https://cdn140.picsart.com/244090226021212.png?r1024x1024",
-      "likes": "newLikesTotal"
-    },
-    {
-      "id": 8,
-      "name": "Little Green Men",
-      "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
-      "likes": "newLikesTotal"
-    },
-    {
-      "name": "Woody",
-      "image": "\"http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png\"",
-      "likes": "newLikesTotal",
-      "id": 9
-    },
-    {
-      "name": "ooooo0909090909090",
-      "image": "http://unsplash.com/photos/AxVpevavpGQ",
-      "likes": "newLikesTotal",
-      "id": 10
-    },
-    {
-      "name": "Shawn",
-      "image": "https://unsplash.com/photos/AxVpevavpGQ",
-      "likes": "newLikesTotal",
-      "id": 11
-    },
-    {
-      "name": "Shawn Hart",
-      "image": "https://images.unsplash.com/photo-1635163236960-c068148bd61a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8aFNQNkp4OHc0WjR8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60",
-      "likes": "newLikesTotal",
-      "id": 12
-    },
-    {
-      "name": "Woody",
-      "image": "https://images.unsplash.com/photo-1635163236960-c068148bd61a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8aFNQNkp4OHc0WjR8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60",
-      "likes": "newLikesTotal",
-      "id": 13
-    }
+  {
+  "id": 1,
+  "name": "Woody",
+  "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
+  "likes": 5
+  },
+  {
+  "id": 2,
+  "name": "Buzz Lightyear",
+  "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
+  "likes": 8
+  },
+  {
+  "id": 3,
+  "name": "Mr. Potato Head",
+  "image": "https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217",
+  "likes": 3
+  },
+  {
+  "id": 4,
+  "name": "Slinky Dog",
+  "image": "https://www.freeiconspng.com/uploads/slinky-png-transparent-1.png",
+  "likes": 4
+  },
+  {
+  "id": 5,
+  "name": "Rex",
+  "image": "http://umich.edu/~chemh215/W11HTML/SSG5/ssg5.2/FRex.png",
+  "likes": 1
+  },
+  {
+  "id": 6,
+  "name": "Bo Peep",
+  "image": "http://4.bp.blogspot.com/_OZHbJ8c71OM/Sog43CMFX2I/AAAAAAAADEs/0AKX0XslD4g/s400/bo.png",
+  "likes": 2
+  },
+  {
+  "id": 7,
+  "name": "Hamm",
+  "image": "https://cdn140.picsart.com/244090226021212.png?r1024x1024",
+  "likes": 0
+  },
+  {
+  "id": 8,
+  "name": "Little Green Men",
+  "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
+  "likes": 1
+  }
   ]
-}
+  }

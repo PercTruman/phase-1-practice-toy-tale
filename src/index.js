@@ -40,38 +40,37 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch('http://localhost:3000/toys')
       .then(res =>res.json())
       .then(toyCards =>toyCards.forEach(toyCard=>
-         renderOneToyCard(toyCard)))
-  }
-
-  const likeButton = document.getElementsByClassName('like-btn')
-  // likeButton.addEventListener('click', console.log('please help me'))
-    // updateLikes(e))
+         renderOneToyCard(toyCard))
+      )}
+ 
 
 
   function renderOneToyCard(toyCard){
-    let card = document.createElement('li')
+    console.log(toyCard)
+    console.log(toyCard.likes)
+    let card = document.createElement('div')
+    card.classList.add('card')
     let cardContainer = document.getElementById('toy-collection')
-    cardContainer.appendChild(card)
-    // card.innerHTML = `
-    // <div class="card">
-    //   <h2>${toyCard.name}</h2>
-    //   <img src = "${toyCard.image}" class="toy-avatar"/>
-    //   <p>${toyCard.likes}</p>
-    // </div>`
+    cardContainer.append(card)
+   
     let toyName = document.createElement('h2')
     toyName.innerText = toyCard.name
     card.append(toyName)
 
     let toyImage = document.createElement('img')
-    toyImage.innerHTML = `src=${toyCard.image} class="toy-avatar"`
+    toyImage.src = `${toyCard.image}`
+    toyImage.classList.add('toy-avatar')
     card.append(toyImage)
 
     let likeCounter = document.createElement('p')
     likeCounter.innerText= toyCard.likes
     console.log(likeCounter)
     card.append(likeCounter)
+    
 
     let likeBtn = document.createElement('button')
+    likeBtn.classList.add('like-btn')
+    likeBtn.innerText = "Like ❤️"
     likeBtn.addEventListener('click', (e)=>updateLikes(e))
     card.append(likeBtn)
 
@@ -96,8 +95,10 @@ document.addEventListener("DOMContentLoaded", () => {
  
 
   function updateLikes(e){
-    e.target.value
-   let newLikesTotal = likes+1
+    console.log(e.target)
+   let newLikesTotal = parseInt(e.target.previousElementSibling.innerText) += 1
+   newLikesTotal += 1
+   console.log(newLikesTotal)
     fetch(`http://localhost:3000/toys/${e.target.id}`,
         {
           method: 'PATCH',
@@ -110,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
           })
       })
       .then(res=>res.json())
-      .then(data=>(data.newLikesTotal))
+      .then(data=>(data.newLikesTotal=`${newLikesTotal}`))
     }
   
 })
