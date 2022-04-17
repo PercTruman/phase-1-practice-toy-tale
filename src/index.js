@@ -41,7 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(res =>res.json())
       .then(toyCards =>toyCards.forEach(toyCard=>
          renderOneToyCard(toyCard)
+      
         ))}
+
 
   function renderOneToyCard(toyCard){
     let card = document.createElement('li')
@@ -54,11 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>`
     let cardContainer = document.getElementById('toy-collection')
     cardContainer.appendChild(card)
-    const likeButton = document.querySelector('button')
-    likeButton.addEventListener('click', updateLikes(toyCard))
-  }
+    const likeButton = document.getElementById('new-toy-btn')
+    likeButton.addEventListener('click', updateLikes(toyCard) )
+}
 
-    
+  // 
    function postNewToy(toyObject){
     
       fetch('http://localhost:3000/toys',{
@@ -73,10 +75,11 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(toy=>renderOneToyCard(toy))
       
   }
-
+ 
 
   function updateLikes(toyCard){
-   let newLikesTotal = (toyCard.likes)++
+   let newLikesTotal = toyCard.likes+1
+   console.log(newLikesTotal)
     fetch(`http://localhost:3000/toys/${toyCard.id}`,
         {
           method: 'PATCH',
@@ -88,6 +91,9 @@ document.addEventListener("DOMContentLoaded", () => {
             likes: newLikesTotal
           })
       })
+      .then(res=>res.json())
+      .then(data=>(data.likes))
     }
   
         })
+        
