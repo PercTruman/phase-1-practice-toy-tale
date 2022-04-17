@@ -96,8 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateLikes(e){
     console.log(e.target)
-   let newLikesTotal = parseInt(e.target.previousElementSibling.innerText) += 1
-   newLikesTotal += 1
+   let newLikesTotal = parseInt(e.target.previousElementSibling.innerText) + 1
    console.log(newLikesTotal)
     fetch(`http://localhost:3000/toys/${e.target.id}`,
         {
