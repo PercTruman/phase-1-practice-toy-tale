@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let likeBtn = document.createElement('button')
     likeBtn.classList.add('like-btn')
     likeBtn.innerText = "Like ❤️"
+    likeBtn.setAttribute("id", toyCard.id)
     likeBtn.addEventListener('click', (e)=>updateLikes(e))
     card.append(likeBtn)
 
@@ -95,9 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
  
 
   function updateLikes(e){
-    console.log(e.target)
    let newLikesTotal = parseInt(e.target.previousElementSibling.innerText) + 1
-   console.log(newLikesTotal)
     fetch(`http://localhost:3000/toys/${e.target.id}`,
         {
           method: 'PATCH',
@@ -110,8 +109,10 @@ document.addEventListener("DOMContentLoaded", () => {
           })
       })
       .then(res=>res.json())
-      .then(data=>(data.newLikesTotal=`${newLikesTotal}`))
-    }
+      .then((data=>{
+        e.target.previousElementSibling.innerText=`${newLikesTotal}`
+      }))
+    
   
-})
-        
+    }
+  })
